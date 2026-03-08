@@ -1,10 +1,10 @@
-# Optical Flow Motion Analysis
+# Оптический поток и динамика видео
 
-## Variant B: Motion Tracking Module
+## Вариант B: Учебная система анализа движения (трекинг-модуль)
 
-Analysis of optical flow methods (Lucas-Kanade and Farneback) for video motion tracking.
+Анализ методов оптического потока (Lucas-Kanade и Farneback) для отслеживания движения видео.
 
-## Parameters
+## Параметры
 
 ### Lucas-Kanade (Sparse)
 - Max corners: 100
@@ -23,7 +23,7 @@ Analysis of optical flow methods (Lucas-Kanade and Farneback) for video motion t
 - Poly sigma: 1.2
 - Thresholds tested: 2.0, 0.9
 
-## Results
+## Результаты
 
 ### Lucas-Kanade
 - Initial points: 100
@@ -40,38 +40,38 @@ Analysis of optical flow methods (Lucas-Kanade and Farneback) for video motion t
 - Motion pixels: 9.5%
 - Fragments: 41
 
-### Key Observations
+### Ключевые наблюдения
 
-**LK Strengths:**
-- Stable long-term tracking
-- Clear trajectory visualization
-- Predictable point loss behavior
+**LK Сильные стороны:**
+- Стабильное долгосрочное отслеживание
+- Четкая визуализация траектории
+- Предсказуемое поведение при потере очков
 
-**LK Weaknesses:**
-- Loses points over time (33% over 200 frames)
-- Requires good texture/features
+**Слабые стороны LK:**
+- Со временем очки теряются (33% за 200 кадров)
+- Требуется хорошая текстура / особенности
 
-**Farneback Strengths:**
-- Complete motion field coverage
-- Detects all moving regions
+**Сильные стороны Farneback:**
+- Полный охват поля движения
+- Обнаруживает все движущиеся области
 
-**Farneback Weaknesses:**
-- High fragmentation (41 regions at threshold 0.9)
-- Threshold-sensitive: lower threshold captures more motion but increases noise
-- Cannot distinguish real motion from noise without post-processing
+**Слабые стороны Farneback:**
+- Высокая фрагментация (41 область при пороговом значении 0,9)
+- Чувствительность к порогу: более низкий порог фиксирует больше движения, но увеличивает уровень шума
+- Невозможно отличить реальное движение от шума без последующей обработки
 
-## When to Use
+### Когда использовать:
 
-**Use Lucas-Kanade when:**
-- Tracking specific objects/features
-- Speed is critical
-- Have distinct keypoints
+**LK когда:**
+- Необходимо отслеживать определенные объекты / особенности
+- Важна скорость
+- Есть четкие ключевые точки
 
-**Use Farneback when:**
-- Need full scene motion analysis
-- Detecting all moving objects
-- Motion segmentation required (with post-processing)
+**Farneback когда:**
+- Требуется полный анализ движения сцены
+- Обнаружение всех движущихся объектов
+- Требуется сегментация движения
 
-## Conclusion
+## Заключение
 
-For this video (crowd motion), LK performed better due to stable tracking and clear trajectories. Farneback showed high fragmentation, demonstrating its sensitivity to noise and need for careful threshold tuning.
+В этом видео (движение толпы) LK показал лучшие результаты благодаря стабильному отслеживанию и четким траекториям. Farneback продемонстрировал высокую фрагментацию, продемонстрировав свою чувствительность к шуму и необходимость тщательной настройки порога.
